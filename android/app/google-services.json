@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "419536431083",
+    "project_id": "rongpurapp-96593",
+    "storage_bucket": "rongpurapp-96593.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419536431083:android:e53835fe6278e357051bae",
+        "android_client_info": {
+          "package_name": "com.kobirbappy.rongpurapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419536431083-l4s7dm6to6tobg0cd0kjigug0p2jm95i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kobirbappy.rongpurapp",
+            "certificate_hash": "3f93c578bd846e3d5541a4873790406de9989855"
+          }
+        },
+        {
+          "client_id": "419536431083-5o5v8c3o6e42pa4g1v7mjfkf9t5nc1i0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAt669vedTx4jdqNZ2hhSGrHFkfHK0Xh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419536431083-5o5v8c3o6e42pa4g1v7mjfkf9t5nc1i0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
