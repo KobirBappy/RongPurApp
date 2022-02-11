@@ -33,7 +33,7 @@ class _ProductPageState extends State<ProductPage> {
         .set({"size": _selectedProductSize});
   }
 
-  final SnackBar _snackBar = SnackBar(content: Text("Product added to the cart",style: TextStyle(color: Colors.cyanAccent),),);
+  final SnackBar _snackBar = SnackBar(content: Text("Product added to the cart"),);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,6 @@ class _ProductPageState extends State<ProductPage> {
                 return ListView(
                   padding: EdgeInsets.all(0),
                   children: [
-
                     ImageSwipe(
                       imageList: imageList,
                     ),
@@ -126,7 +125,7 @@ class _ProductPageState extends State<ProductPage> {
                     Padding(
                       padding: const EdgeInsets.all(24.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           GestureDetector(
                             onTap: () async {
@@ -134,43 +133,45 @@ class _ProductPageState extends State<ProductPage> {
                               Scaffold.of(context).showSnackBar(_snackBar);
                             },
                             child: Container(
-                            height: 50.0,
+                              width: 65.0,
+                              height: 65.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFDCDCDC),
+                                borderRadius: BorderRadius.circular(8.0),
+                                image: DecorationImage(image: AssetImage('assets/images/tag.png'))
+                              ),
+                              alignment: Alignment.center,
+                              // child: Image(
+                              //   image: AssetImage(
+                              //     "assets/images/tag.png",
+                              //   ),
+                              //   height: 22.0,
+                              // ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () async {
+                                await _addToCart();
+                                Scaffold.of(context).showSnackBar(_snackBar);
+                              },
+                              child: Container(
+                                height: 65.0,
                                 margin: EdgeInsets.only(
                                   left: 16.0,
                                 ),
-                              decoration: BoxDecoration(
-                               color: Colors.greenAccent,
+                                decoration: BoxDecoration(
+                                  color: Colors.greenAccent,
                                   borderRadius: BorderRadius.circular(5.0),
-                                  //  image: DecorationImage(image: AssetImage('assets/images/tag.png'))
-                              ),
-                              alignment: Alignment.center,
-                              child: Text('Save Item ',style: TextStyle(
+                                ),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Add To Cart",
+                                  style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 16.0,
-                                      fontWeight: FontWeight.w600),),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () async {
-                              await _addToCart();
-                              Scaffold.of(context).showSnackBar(_snackBar);
-                            },
-                            child: Container(
-                              height: 50.0,
-                              margin: EdgeInsets.only(
-                                left: 16.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.greenAccent,
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Add To Cart",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w600),
+                                ),
                               ),
                             ),
                           )
