@@ -111,9 +111,34 @@ class _ProductPageState extends State<ProductPage> {
                         vertical: 24.0,
                         horizontal: 24.0,
                       ),
-                      child: Text(
-                        "Select Size",
-                        style: Constants.regularDarkText,
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Select Size",
+                            style: Constants.regularDarkText,
+                          ),
+                          
+                          GestureDetector(
+                            onTap: () async {
+                              await _addToSaved();
+                              Scaffold.of(context).showSnackBar(_snackBar);
+                            },
+                            child: Container(
+                              width: 50.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFDCDCDC),
+                                borderRadius: BorderRadius.circular(8.0),
+                                
+                              ),
+                              alignment: Alignment.center,
+                            child: Text('Save',style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     ProductSize(
@@ -127,28 +152,7 @@ class _ProductPageState extends State<ProductPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () async {
-                              await _addToSaved();
-                              Scaffold.of(context).showSnackBar(_snackBar);
-                            },
-                            child: Container(
-                              width: 65.0,
-                              height: 65.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFDCDCDC),
-                                borderRadius: BorderRadius.circular(8.0),
-                                image: DecorationImage(image: AssetImage('assets/images/tag.png'))
-                              ),
-                              alignment: Alignment.center,
-                              // child: Image(
-                              //   image: AssetImage(
-                              //     "assets/images/tag.png",
-                              //   ),
-                              //   height: 22.0,
-                              // ),
-                            ),
-                          ),
+                          
                           Expanded(
                             child: GestureDetector(
                               onTap: () async {
