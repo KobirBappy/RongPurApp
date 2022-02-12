@@ -104,7 +104,7 @@ class SavedScreen extends StatelessWidget {
                                             vertical: 4.0,
                                           ),
                                           child: Text(
-                                            "\$${_productMap['price']}",
+                                            "\৳${_productMap['price']}",
                                             style: TextStyle(
                                                 fontSize: 16.0,
                                                 color: Theme.of(context)
