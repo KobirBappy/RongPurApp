@@ -114,12 +114,15 @@ Future<void> _googleSignUp() async {
               ),
               Column(
                 children: [
+
+                 
                   Padding(
                     padding: EdgeInsets.only(
                       right: 15,
                       left: 15,
                     ),
                     child: TextField(
+                      
                       controller: emailController,
                       onChanged: (value) {
                         setState(() {
